@@ -3,7 +3,12 @@ pipeline {
     stages {
         stage ('Build-Back') { 
             steps {
-                sh 'mvn clean package -DskipTests=true'
+                script {
+                    sshagent(['ssh_bvadeploy']) {
+                        sh 'cd /BVA/$JOB_NAME'
+                        sh 'mvn clean package -DskipTests=true'
+                    }
+                }
             }
         }
     }
