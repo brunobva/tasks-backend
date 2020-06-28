@@ -1,10 +1,11 @@
 pipeline {
     agent any
-    stage 'BVA-Post' { 
-        steps {
-            sh "It works! :) "
+    stages {
+        stage 'BVA-Post' { 
+            steps {
+                sh "It works! :) "
+            }
         }
-
     }
 
 }
