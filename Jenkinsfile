@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage ('BVA-Post') { 
+        stage ('Build-Back') { 
             steps {
-                echo 'It works! Now it is :)'
+                sh 'mvn clean package -DskipTests=true'
             }
         }
     }
