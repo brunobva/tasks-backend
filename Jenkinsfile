@@ -1,11 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage 'BVA-Post' { 
+        stage ('BVA-Post') { 
             steps {
-                sh "It works! :) "
+                echo 'It works! Now it is :)'
             }
         }
     }
-
 }
