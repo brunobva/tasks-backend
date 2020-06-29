@@ -11,11 +11,7 @@ pipeline {
     stages {
         stage ('Build-Back') { 
             steps {
-                script {
-                    sshagent(['ssh_bvadeploy']) {
-                        sh 'ssh -tt bvadeploy@bva-host -o StrictHostKeyChecking=no && mvn --version && java --version
-                    }
-                }
+                sshCommand remote: mvn --version && java --version                 
             }
         }
     }
